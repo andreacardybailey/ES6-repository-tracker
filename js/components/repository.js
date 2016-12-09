@@ -1,23 +1,23 @@
 import React from 'react';
-
+import {connect}  from 'react-redux';
 import StarRater from './star-rater';
 /**
  * The Repository component displays the 
  * repository's name, and a StarRater component.
  */
-export default class Repository extends React.Component {
+export class Repository extends React.Component {
+
     constructor(props) {
         super(props);
         this.changeRating = this.changeRating.bind(this);
     }
 
     changeRating(rating) {
-        // TODO: Change the rating
-        // this.props.dispatch(
-        //     actions.rateRepository(this.props.repository.name, rating)
-        // );
+        this.props.dispatch(
+            actions.rateRepository(this.props.repository.name, rating)
+        );
     }
-
+    
     render() {
         return (
             <div className="repository">
@@ -29,3 +29,4 @@ export default class Repository extends React.Component {
         );
     }
 }
+export default connect()(Repository);

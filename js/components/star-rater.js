@@ -6,7 +6,9 @@ import React from 'react';
  * onChange callback with the new rating.
  */
 function StarRater(props) {
+
     const stars = [];
+    
     for (let i=0; i<5; i++) {
         let className;
         if (i < this.props.rating) {

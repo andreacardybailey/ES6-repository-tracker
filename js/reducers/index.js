@@ -5,6 +5,7 @@ import store from '../store';
 const initialRepositoryState = [];
 
 export const repositoryReducer = (state=initialRepositoryState, action) => {
+    
     state = state || initialRepositoryState;
     if (action.type === actions.ADD_REPOSITORY) {
         /** 
